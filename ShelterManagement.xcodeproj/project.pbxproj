@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4088041B2094C83F37947E19 /* Pods_ShelterManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34FB2E8268DF52D9D755ECEF /* Pods_ShelterManagement.framework */; };
 		6B542D532CF74E9E007877B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D482CF74E9E007877B6 /* Assets.xcassets */; };
 		6B542D552CF74E9E007877B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D4B2CF74E9E007877B6 /* LaunchScreen.storyboard */; };
 		6B542D562CF74E9E007877B6 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D4D2CF74E9E007877B6 /* Root.storyboard */; };
@@ -28,9 +29,21 @@
 		6B542D7A2CF753E2007877B6 /* LuckiestGuy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D792CF753E2007877B6 /* LuckiestGuy-Regular.ttf */; };
 		6B542D7F2CF75B67007877B6 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D7D2CF75B67007877B6 /* MenuViewController.swift */; };
 		6B542D802CF75B67007877B6 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D7E2CF75B67007877B6 /* MenuViewController.xib */; };
+		6B542D852CF77BA9007877B6 /* AnimalAccountingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D832CF77BA9007877B6 /* AnimalAccountingViewController.swift */; };
+		6B542D862CF77BA9007877B6 /* AnimalAccountingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D842CF77BA9007877B6 /* AnimalAccountingViewController.xib */; };
+		6B542D8A2CF7810B007877B6 /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D882CF7810B007877B6 /* AnimalTableViewCell.swift */; };
+		6B542D8B2CF7810B007877B6 /* AnimalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D892CF7810B007877B6 /* AnimalTableViewCell.xib */; };
+		6B542D8E2CF78350007877B6 /* AnimalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D8D2CF78350007877B6 /* AnimalModel.swift */; };
+		6B542D932CF7861C007877B6 /* AnimalFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D912CF7861C007877B6 /* AnimalFormViewController.swift */; };
+		6B542D942CF7861C007877B6 /* AnimalFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B542D922CF7861C007877B6 /* AnimalFormViewController.xib */; };
+		6B542D972CF7AADA007877B6 /* AnimalFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D962CF7AADA007877B6 /* AnimalFormViewModel.swift */; };
+		6B542D9A2CF7D35A007877B6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D992CF7D35A007877B6 /* CoreDataManager.swift */; };
+		6B542D9D2CF7D537007877B6 /* AnimalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B542D9C2CF7D537007877B6 /* AnimalsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A601504C246115A2D24528C /* Pods-ShelterManagement.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelterManagement.debug.xcconfig"; path = "Target Support Files/Pods-ShelterManagement/Pods-ShelterManagement.debug.xcconfig"; sourceTree = "<group>"; };
+		34FB2E8268DF52D9D755ECEF /* Pods_ShelterManagement.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShelterManagement.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B542D2C2CF74E97007877B6 /* ShelterManagement.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShelterManagement.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B542D472CF74E9E007877B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6B542D482CF74E9E007877B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -54,6 +67,17 @@
 		6B542D792CF753E2007877B6 /* LuckiestGuy-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "LuckiestGuy-Regular.ttf"; sourceTree = "<group>"; };
 		6B542D7D2CF75B67007877B6 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6B542D7E2CF75B67007877B6 /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		6B542D832CF77BA9007877B6 /* AnimalAccountingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAccountingViewController.swift; sourceTree = "<group>"; };
+		6B542D842CF77BA9007877B6 /* AnimalAccountingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalAccountingViewController.xib; sourceTree = "<group>"; };
+		6B542D882CF7810B007877B6 /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
+		6B542D892CF7810B007877B6 /* AnimalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalTableViewCell.xib; sourceTree = "<group>"; };
+		6B542D8D2CF78350007877B6 /* AnimalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModel.swift; sourceTree = "<group>"; };
+		6B542D912CF7861C007877B6 /* AnimalFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFormViewController.swift; sourceTree = "<group>"; };
+		6B542D922CF7861C007877B6 /* AnimalFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnimalFormViewController.xib; sourceTree = "<group>"; };
+		6B542D962CF7AADA007877B6 /* AnimalFormViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalFormViewModel.swift; sourceTree = "<group>"; };
+		6B542D992CF7D35A007877B6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		6B542D9C2CF7D537007877B6 /* AnimalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsViewModel.swift; sourceTree = "<group>"; };
+		D5B9B10912EA073B160EAE9E /* Pods-ShelterManagement.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShelterManagement.release.xcconfig"; path = "Target Support Files/Pods-ShelterManagement/Pods-ShelterManagement.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4088041B2094C83F37947E19 /* Pods_ShelterManagement.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,6 +97,8 @@
 			children = (
 				6B542D512CF74E9E007877B6 /* ShelterManagement */,
 				6B542D2D2CF74E97007877B6 /* Products */,
+				FC9A9119D57640FF6207CF51 /* Pods */,
+				BDCCCDDB72DC1618C0C8D49C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +113,9 @@
 		6B542D512CF74E9E007877B6 /* ShelterManagement */ = {
 			isa = PBXGroup;
 			children = (
+				6B542D982CF7D31E007877B6 /* CoreData */,
+				6B542D8F2CF785F7007877B6 /* AnimalForm */,
+				6B542D812CF77B7B007877B6 /* AnimalAccounting */,
 				6B542D7C2CF75B5B007877B6 /* Menu */,
 				6B542D7B2CF75ADF007877B6 /* Root */,
 				6B542D5B2CF74FD7007877B6 /* Extensions */,
@@ -144,6 +174,102 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		6B542D812CF77B7B007877B6 /* AnimalAccounting */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D9B2CF7D528007877B6 /* ViewModel */,
+				6B542D8C2CF78340007877B6 /* Model */,
+				6B542D872CF780F3007877B6 /* Cell */,
+				6B542D822CF77B89007877B6 /* View */,
+			);
+			path = AnimalAccounting;
+			sourceTree = "<group>";
+		};
+		6B542D822CF77B89007877B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D832CF77BA9007877B6 /* AnimalAccountingViewController.swift */,
+				6B542D842CF77BA9007877B6 /* AnimalAccountingViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B542D872CF780F3007877B6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D882CF7810B007877B6 /* AnimalTableViewCell.swift */,
+				6B542D892CF7810B007877B6 /* AnimalTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		6B542D8C2CF78340007877B6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D8D2CF78350007877B6 /* AnimalModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6B542D8F2CF785F7007877B6 /* AnimalForm */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D952CF7AAC1007877B6 /* ViewModel */,
+				6B542D902CF78608007877B6 /* View */,
+			);
+			path = AnimalForm;
+			sourceTree = "<group>";
+		};
+		6B542D902CF78608007877B6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D912CF7861C007877B6 /* AnimalFormViewController.swift */,
+				6B542D922CF7861C007877B6 /* AnimalFormViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6B542D952CF7AAC1007877B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D962CF7AADA007877B6 /* AnimalFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6B542D982CF7D31E007877B6 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D992CF7D35A007877B6 /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		6B542D9B2CF7D528007877B6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6B542D9C2CF7D537007877B6 /* AnimalsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BDCCCDDB72DC1618C0C8D49C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34FB2E8268DF52D9D755ECEF /* Pods_ShelterManagement.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC9A9119D57640FF6207CF51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2A601504C246115A2D24528C /* Pods-ShelterManagement.debug.xcconfig */,
+				D5B9B10912EA073B160EAE9E /* Pods-ShelterManagement.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,17 +277,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6B542D422CF74E99007877B6 /* Build configuration list for PBXNativeTarget "ShelterManagement" */;
 			buildPhases = (
+				D32AD911D1A39E77E7E91688 /* [CP] Check Pods Manifest.lock */,
 				6B542D282CF74E97007877B6 /* Sources */,
 				6B542D292CF74E97007877B6 /* Frameworks */,
 				6B542D2A2CF74E97007877B6 /* Resources */,
+				5333887A115FD629B6E5A211 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ShelterManagement;
-			packageProductDependencies = (
-			);
 			productName = ShelterManagement;
 			productReference = 6B542D2C2CF74E97007877B6 /* ShelterManagement.app */;
 			productType = "com.apple.product-type.application";
@@ -206,6 +332,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B542D532CF74E9E007877B6 /* Assets.xcassets in Resources */,
+				6B542D862CF77BA9007877B6 /* AnimalAccountingViewController.xib in Resources */,
+				6B542D942CF7861C007877B6 /* AnimalFormViewController.xib in Resources */,
+				6B542D8B2CF7810B007877B6 /* AnimalTableViewCell.xib in Resources */,
 				6B542D552CF74E9E007877B6 /* LaunchScreen.storyboard in Resources */,
 				6B542D802CF75B67007877B6 /* MenuViewController.xib in Resources */,
 				6B542D562CF74E9E007877B6 /* Root.storyboard in Resources */,
@@ -214,6 +343,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5333887A115FD629B6E5A211 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShelterManagement/Pods-ShelterManagement-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ShelterManagement/Pods-ShelterManagement-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShelterManagement/Pods-ShelterManagement-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D32AD911D1A39E77E7E91688 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ShelterManagement-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6B542D282CF74E97007877B6 /* Sources */ = {
@@ -226,14 +397,21 @@
 				6B542D6C2CF752E4007877B6 /* Double.swift in Sources */,
 				6B542D6D2CF752E4007877B6 /* BaseButton.swift in Sources */,
 				6B542D6E2CF752E4007877B6 /* BaseTextField.swift in Sources */,
+				6B542D932CF7861C007877B6 /* AnimalFormViewController.swift in Sources */,
+				6B542D852CF77BA9007877B6 /* AnimalAccountingViewController.swift in Sources */,
+				6B542D972CF7AADA007877B6 /* AnimalFormViewModel.swift in Sources */,
 				6B542D6F2CF752E4007877B6 /* PaddingTextField.swift in Sources */,
+				6B542D9A2CF7D35A007877B6 /* CoreDataManager.swift in Sources */,
 				6B542D7F2CF75B67007877B6 /* MenuViewController.swift in Sources */,
+				6B542D8E2CF78350007877B6 /* AnimalModel.swift in Sources */,
 				6B542D702CF752E4007877B6 /* String.swift in Sources */,
 				6B542D712CF752E4007877B6 /* UIView.swift in Sources */,
 				6B542D722CF752E4007877B6 /* Date.swift in Sources */,
 				6B542D732CF752E4007877B6 /* ViewController.swift in Sources */,
 				6B542D742CF752E4007877B6 /* ShadowView.swift in Sources */,
 				6B542D752CF752E4007877B6 /* Font.swift in Sources */,
+				6B542D9D2CF7D537007877B6 /* AnimalsViewModel.swift in Sources */,
+				6B542D8A2CF7810B007877B6 /* AnimalTableViewCell.swift in Sources */,
 				6B542D592CF74E9E007877B6 /* ShelterManagement.xcdatamodeld in Sources */,
 				6B542D5A2CF74E9E007877B6 /* RootViewController.swift in Sources */,
 			);
@@ -263,6 +441,7 @@
 /* Begin XCBuildConfiguration section */
 		6B542D432CF74E99007877B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A601504C246115A2D24528C /* Pods-ShelterManagement.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -293,6 +472,7 @@
 		};
 		6B542D442CF74E99007877B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5B9B10912EA073B160EAE9E /* Pods-ShelterManagement.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -358,7 +538,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -421,7 +601,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

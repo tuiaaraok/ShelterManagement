@@ -9,7 +9,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="ShelterManagement" customModuleProvider="target">
             <connections>
-                <outlet property="accountingButton" destination="P9x-Me-uBj" id="4sG-Za-V4Q"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,6 +30,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Animal accounting"/>
+                            <connections>
+                                <action selector="clickedAnimalAccounting:" destination="-1" eventType="touchUpInside" id="aGy-cs-a5Y"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGs-bO-eN8" customClass="BaseButton" customModule="ShelterManagement" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="96" width="301" height="70"/>
@@ -39,6 +41,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Feed management"/>
+                            <connections>
+                                <action selector="clickedFeedManagment:" destination="-1" eventType="touchUpInside" id="NDo-UX-T7R"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCh-Qh-She" customClass="BaseButton" customModule="ShelterManagement" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="192" width="301" height="70"/>
@@ -47,6 +52,9 @@
                             </constraints>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Medical care"/>
+                            <connections>
+                                <action selector="clickedMedicalCare:" destination="-1" eventType="touchUpInside" id="oz0-Np-njz"/>
+                            </connections>
                         </button>
                     </subviews>
                 </stackView>

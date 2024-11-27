@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnimalFormViewController" customModule="ShelterManagement" customModuleProvider="target">
+            <connections>
+                <outlet property="ageTextField" destination="vhg-Dg-OeD" id="dTK-OE-Lyg"/>
+                <outlet property="cancelButton" destination="cIp-Eu-aCy" id="aga-ZK-Ea6"/>
+                <outlet property="dropDownImageView" destination="JYa-jN-RT9" id="08o-ga-lvv"/>
+                <outlet property="nameTextField" destination="QDQ-Id-MC6" id="nPW-Wk-NwR"/>
+                <outlet property="saveButton" destination="Wlu-aC-msV" id="yHJ-dT-gQU"/>
+                <outlet property="titleLabel" destination="4SN-Ls-yqN" id="bcY-gl-1Of"/>
+                <outlet property="typeButton" destination="Vjt-IL-Jic" id="fri-eL-8SH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outletCollection property="titleLabels" destination="oc4-tp-nac" collectionClass="NSMutableArray" id="pv2-aH-Aoc"/>
+                <outletCollection property="titleLabels" destination="UkD-CW-3zg" collectionClass="NSMutableArray" id="dhn-Pa-LF7"/>
+                <outletCollection property="titleLabels" destination="ety-og-WnC" collectionClass="NSMutableArray" id="GDD-Nl-Fuf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a new animal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SN-Ls-yqN">
+                    <rect key="frame" x="16" y="59.000000000000007" width="361" height="20.333333333333336"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="background"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QDQ-Id-MC6" customClass="BaseTextField" customModule="ShelterManagement" customModuleProvider="target">
+                    <rect key="frame" x="31" y="214.33333333333334" width="326" height="48.000000000000028"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="aU9-mZ-eR4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oc4-tp-nac">
+                    <rect key="frame" x="31" y="193.33333333333334" width="107" height="21"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vhg-Dg-OeD" customClass="BaseTextField" customModule="ShelterManagement" customModuleProvider="target">
+                    <rect key="frame" x="31" y="387.66666666666669" width="326" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="ro6-rX-wGk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ety-og-WnC">
+                    <rect key="frame" x="31" y="366" width="31.666666666666671" height="21.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjt-IL-Jic">
+                    <rect key="frame" x="31" y="301" width="326" height="48"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="fED-i8-5vi"/>
+                    </constraints>
+                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="chooseAnimalType:" destination="-1" eventType="touchUpInside" id="xzi-NB-YkG"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type of animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkD-CW-3zg">
+                    <rect key="frame" x="31" y="279.33333333333331" width="117" height="21.666666666666686"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowBottom" highlightedImage="arrowTop" translatesAutoresizingMaskIntoConstraints="NO" id="JYa-jN-RT9">
+                    <rect key="frame" x="318" y="313" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="RDQ-Mu-Ll7"/>
+                        <constraint firstAttribute="width" constant="24" id="n91-nm-zdv"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="TEM-Ex-Wz7">
+                    <rect key="frame" x="36" y="746" width="321" height="48"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIp-Eu-aCy">
+                            <rect key="frame" x="0.0" y="0.0" width="145.66666666666666" height="48"/>
+                            <color key="backgroundColor" red="0.59607843137254901" green="0.54117647058823526" blue="0.51764705882352935" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="dsS-2A-NAZ"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Cancel">
+                                <color key="titleColor" name="baseOrange"/>
+                            </state>
+                            <connections>
+                                <action selector="clickedCancel:" destination="-1" eventType="touchUpInside" id="MF4-p4-meJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wlu-aC-msV" customClass="BaseButton" customModule="ShelterManagement" customModuleProvider="target">
+                            <rect key="frame" x="175.66666666666663" y="0.0" width="145.33333333333337" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="sHZ-fS-VSa"/>
+                            </constraints>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Save"/>
+                            <connections>
+                                <action selector="clickedSave:" destination="-1" eventType="touchUpInside" id="XX6-nf-5fX"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <gestureRecognizers/>
+            <constraints>
+                <constraint firstItem="4SN-Ls-yqN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="2St-Tz-pFY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JYa-jN-RT9" secondAttribute="trailing" constant="51" id="5WZ-5y-jj4"/>
+                <constraint firstItem="JYa-jN-RT9" firstAttribute="centerY" secondItem="Vjt-IL-Jic" secondAttribute="centerY" id="9HR-Zd-Vdw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Vjt-IL-Jic" secondAttribute="trailing" constant="36" id="BtT-yp-JZb"/>
+                <constraint firstItem="Vjt-IL-Jic" firstAttribute="top" secondItem="UkD-CW-3zg" secondAttribute="bottom" id="COn-g7-vgi"/>
+                <constraint firstItem="oc4-tp-nac" firstAttribute="leading" secondItem="QDQ-Id-MC6" secondAttribute="leading" id="GLH-cM-Pmr"/>
+                <constraint firstItem="UkD-CW-3zg" firstAttribute="leading" secondItem="Vjt-IL-Jic" secondAttribute="leading" id="H7a-rg-Tuc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="TEM-Ex-Wz7" secondAttribute="bottom" constant="24" id="J8J-cE-3y8"/>
+                <constraint firstItem="QDQ-Id-MC6" firstAttribute="top" secondItem="oc4-tp-nac" secondAttribute="bottom" id="NEQ-29-Sqy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4SN-Ls-yqN" secondAttribute="trailing" constant="16" id="NEh-kY-DAh"/>
+                <constraint firstItem="ety-og-WnC" firstAttribute="top" secondItem="Vjt-IL-Jic" secondAttribute="bottom" constant="17" id="OF6-67-N0G"/>
+                <constraint firstItem="TEM-Ex-Wz7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="TfF-4O-SoD"/>
+                <constraint firstItem="vhg-Dg-OeD" firstAttribute="top" secondItem="ety-og-WnC" secondAttribute="bottom" id="WLX-oq-3AG"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vhg-Dg-OeD" secondAttribute="trailing" constant="36" id="c9v-2p-3ji"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QDQ-Id-MC6" secondAttribute="trailing" constant="36" id="eUz-Ql-5Ce"/>
+                <constraint firstItem="oc4-tp-nac" firstAttribute="top" secondItem="4SN-Ls-yqN" secondAttribute="bottom" constant="114" id="hgm-Ky-tfW"/>
+                <constraint firstItem="ety-og-WnC" firstAttribute="leading" secondItem="vhg-Dg-OeD" secondAttribute="leading" id="icb-hE-YWd"/>
+                <constraint firstItem="4SN-Ls-yqN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jRH-Wv-DsH"/>
+                <constraint firstItem="4SN-Ls-yqN" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="lft-ut-XYE"/>
+                <constraint firstItem="UkD-CW-3zg" firstAttribute="top" secondItem="QDQ-Id-MC6" secondAttribute="bottom" constant="17" id="pJa-Y6-pJr"/>
+                <constraint firstItem="QDQ-Id-MC6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="31" id="tj6-Ye-KLk"/>
+                <constraint firstItem="vhg-Dg-OeD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="31" id="v2n-Rn-00p"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="TEM-Ex-Wz7" secondAttribute="trailing" constant="36" id="vyD-s2-xcf"/>
+                <constraint firstItem="Vjt-IL-Jic" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="31" id="z2H-b5-8oi"/>
+            </constraints>
+            <connections>
+                <outletCollection property="gestureRecognizers" destination="c3B-RZ-OJu" appends="YES" id="bcu-Za-sT9"/>
+            </connections>
+            <point key="canvasLocation" x="136.64122137404578" y="19.718309859154932"/>
+        </view>
+        <tapGestureRecognizer id="c3B-RZ-OJu">
+            <connections>
+                <action selector="handleTapGesture:" destination="-1" id="RVh-vz-tff"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="arrowBottom" width="24" height="24"/>
+        <image name="arrowTop" width="24" height="24"/>
+        <namedColor name="background">
+            <color red="0.56499999761581421" green="0.63899999856948853" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="baseOrange">
+            <color red="0.99599999189376831" green="0.54100000858306885" blue="0.34900000691413879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

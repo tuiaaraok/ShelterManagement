@@ -41,9 +41,11 @@ class BaseTextField: UITextField {
     }
     
     func commonInit() {
-//        self.backgroundColor = .baseGray
-//        self.font = .bold(size: 26)
+        self.backgroundColor = .white
+        self.font = .regular(size: 18)
         self.layer.cornerRadius = 8
+        self.layer.borderWidth = 2
+        self.layer.borderColor = UIColor.black.cgColor
         self.textColor = .black
     }
 }

@@ -30,9 +30,9 @@ class BaseButton: UIButton {
         self.layer.cornerRadius = 8
         self.addShadow()
         let attributes: [NSAttributedString.Key: Any] = [
-            .strokeColor: UIColor.black, // Stroke color
-            .foregroundColor: UIColor.background, // Text color (fill color)
-            .strokeWidth: -4 // Negative value to fill the text and stroke
+            .strokeColor: UIColor.black,
+            .foregroundColor: UIColor.background,
+            .strokeWidth: -4
         ]
         let attributedText = NSAttributedString(string: self.titleLabel?.text ?? "", attributes: attributes)
         self.setAttributedTitle(attributedText, for: .normal)

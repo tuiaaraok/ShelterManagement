@@ -8,11 +8,19 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
-    @IBOutlet weak var accountingButton: BaseButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNaviagtionInfoButton()
         self.navigationItem.hidesBackButton = true
+    }
+    
+    @IBAction func clickedAnimalAccounting(_ sender: BaseButton) {
+        self.pushViewController(AnimalAccountingViewController.self)
+    }
+    
+    @IBAction func clickedFeedManagment(_ sender: BaseButton) {
+    }
+    @IBAction func clickedMedicalCare(_ sender: BaseButton) {
     }
 }

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController" customModule="ShelterManagement" customModuleProvider="target">
+            <connections>
+                <outlet property="accountingButton" destination="P9x-Me-uBj" id="4sG-Za-V4Q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menuIcon" translatesAutoresizingMaskIntoConstraints="NO" id="E7G-F2-v4l">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="467"/>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="bJh-EV-T6y">
+                    <rect key="frame" x="46" y="487" width="301" height="262"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P9x-Me-uBj" customClass="BaseButton" customModule="ShelterManagement" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="301" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="UMV-2o-XH1"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Animal accounting"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGs-bO-eN8" customClass="BaseButton" customModule="ShelterManagement" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="96" width="301" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="0hJ-M4-kNc"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Feed management"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCh-Qh-She" customClass="BaseButton" customModule="ShelterManagement" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="192" width="301" height="70"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="GY1-hd-q9G"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Medical care"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="E7G-F2-v4l" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Er5-aF-Tg3"/>
+                <constraint firstAttribute="trailing" secondItem="bJh-EV-T6y" secondAttribute="trailing" constant="46" id="FcC-Vv-Nex"/>
+                <constraint firstItem="E7G-F2-v4l" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZWn-iy-efL"/>
+                <constraint firstAttribute="trailing" secondItem="E7G-F2-v4l" secondAttribute="trailing" id="k3C-X8-ikp"/>
+                <constraint firstItem="bJh-EV-T6y" firstAttribute="top" secondItem="E7G-F2-v4l" secondAttribute="bottom" constant="20" id="qQY-n1-w9i"/>
+                <constraint firstItem="bJh-EV-T6y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="46" id="rAx-9D-MLy"/>
+            </constraints>
+            <point key="canvasLocation" x="-31.297709923664122" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="menuIcon" width="401" height="467"/>
+        <namedColor name="background">
+            <color red="0.56470588235294117" green="0.63921568627450975" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

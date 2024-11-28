@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FeedManagementViewController" customModule="ShelterManagement" customModuleProvider="target">
+            <connections>
+                <outlet property="feedsTableView" destination="uXa-ll-JcZ" id="Qnk-xh-hY7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzq-Kq-17d" customClass="BaseButton" customModule="ShelterManagement" customModuleProvider="target">
+                    <rect key="frame" x="46" y="59" width="301" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="DGo-sC-mhf"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="+Add a delivery"/>
+                    <connections>
+                        <action selector="clickedAdd:" destination="-1" eventType="touchUpInside" id="JmI-s5-Agh"/>
+                    </connections>
+                </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="uXa-ll-JcZ">
+                    <rect key="frame" x="0.0" y="131" width="393" height="687"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" name="background"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="uXa-ll-JcZ" secondAttribute="bottom" id="1C5-Tq-Lcn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uXa-ll-JcZ" secondAttribute="trailing" id="MqG-OO-i8U"/>
+                <constraint firstItem="uXa-ll-JcZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="aLZ-fQ-6kF"/>
+                <constraint firstItem="Wzq-Kq-17d" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="qRy-xV-qJE"/>
+                <constraint firstItem="Wzq-Kq-17d" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="46" id="wWK-a8-cP3"/>
+                <constraint firstItem="uXa-ll-JcZ" firstAttribute="top" secondItem="Wzq-Kq-17d" secondAttribute="bottom" constant="24" id="x7d-tU-iiN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Wzq-Kq-17d" secondAttribute="trailing" constant="46" id="z2s-yY-Qgl"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="background">
+            <color red="0.56499999761581421" green="0.63899999856948853" blue="0.52899998426437378" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

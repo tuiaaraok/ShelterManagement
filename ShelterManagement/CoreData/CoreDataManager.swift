@@ -103,6 +103,61 @@ class CoreDataManager {
             }
         }
     }
+    
+    func saveFeed(feedModel: FeedModel, completion: @escaping (Error?) -> Void) {
+        let id = feedModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Feed> = Feed.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let feed: Feed
+                
+                if let existingFeed = results.first {
+                    feed = existingFeed
+                } else {
+                    feed = Feed(context: backgroundContext)
+                    feed.id = id
+                }
+                    
+                feed.type = feedModel.type
+                feed.quantity = feedModel.quantity ?? 0
+                
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+    
+    func fetchFeeds(completion: @escaping ([FeedModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Feed> = Feed.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var feedsModel: [FeedModel] = []
+                for result in results {
+                    let feedModel = FeedModel(id: result.id ?? UUID(), type: result.type, quantity: result.quantity)
+                    feedsModel.append(feedModel)
+                }
+                DispatchQueue.main.async {
+                    completion(feedsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
 
 }
 

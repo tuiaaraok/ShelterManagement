@@ -20,7 +20,9 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func clickedFeedManagment(_ sender: BaseButton) {
+        self.pushViewController(FeedManagementViewController.self)
     }
+    
     @IBAction func clickedMedicalCare(_ sender: BaseButton) {
     }
 }

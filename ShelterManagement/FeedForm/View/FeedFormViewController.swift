@@ -127,18 +127,10 @@ extension FeedFormViewController: NumberTextFielddDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-         
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-         
     }
-    
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        let allowedCharacters = CharacterSet.decimalDigits
-//        let characterSet = CharacterSet(charactersIn: string)
-//        return allowedCharacters.isSuperset(of: characterSet)
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         view.endEditing(true)

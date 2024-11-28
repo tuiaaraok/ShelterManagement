@@ -159,5 +159,105 @@ class CoreDataManager {
         }
     }
 
+    func saveMedical(medicalModel: MedicalModel, completion: @escaping (Error?) -> Void) {
+        let id = medicalModel.id
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Medical> = Medical.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                let medical: Medical
+                
+                if let existingMedical = results.first {
+                    medical = existingMedical
+                } else {
+                    medical = Medical(context: backgroundContext)
+                    medical.id = id
+                }
+                
+                if let animalModel = medicalModel.animal {
+                    let animalFetchRequest: NSFetchRequest<Animal> = Animal.fetchRequest()
+                    animalFetchRequest.predicate = NSPredicate(format: "id == %@", animalModel.id as CVarArg)
+                    if let fetchedAnimal = try backgroundContext.fetch(animalFetchRequest).first {
+                        medical.animal = fetchedAnimal
+                    } else {
+                        let newAnimal = Animal(context: backgroundContext)
+                        newAnimal.id = animalModel.id
+                        newAnimal.name = animalModel.name
+                        newAnimal.type = animalModel.type
+                        newAnimal.age = Int32(animalModel.age ?? 0)
+                        medical.animal = newAnimal
+                    }
+                } else {
+                    medical.animal = nil
+                }
+                
+                medical.procedureType = medicalModel.procedureType
+                medical.visitDate = medicalModel.visitDate
+                
+                try backgroundContext.save()
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
+    
+    func fetchMedicals(completion: @escaping ([MedicalModel], Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Medical> = Medical.fetchRequest()
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                var medicalsModel: [MedicalModel] = []
+                for result in results {
+                    let medicalModel = MedicalModel(id: result.id ?? UUID(), animal: AnimalModel(id: result.animal?.id ?? UUID(), name: result.animal?.name, type: result.animal?.type, age: Int(result.animal?.age ?? 0)), procedureType: result.procedureType, visitDate: result.visitDate)
+                    medicalsModel.append(medicalModel)
+                }
+                DispatchQueue.main.async {
+                    completion(medicalsModel, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion([], error)
+                }
+            }
+        }
+    }
+    
+    func removeMedical(by id: UUID, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Medical> = Medical.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let medicalToDelete = results.first {
+                    backgroundContext.delete(medicalToDelete)
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "CoreDataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Medical record not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
 }
 

@@ -1,5 +1,5 @@
 //
-//  FeedTableViewCell.swift
+//  MedicalTableViewCell.swift
 //  ShelterManagement
 //
 //  Created by Karen Khachatryan on 28.11.24.
@@ -7,18 +7,10 @@
 
 import UIKit
 
-protocol FeedTableViewCellDelegate: AnyObject {
-    func increment(id: UUID)
-    func decrement(id: UUID)
-}
-
-class FeedTableViewCell: UITableViewCell {
-
+class MedicalTableViewCell: UITableViewCell {
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var bgView: UIView!
-    weak var delegate: FeedTableViewCellDelegate?
-    private var id: UUID?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,25 +29,7 @@ class FeedTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    override func prepareForReuse() {
-        id = nil
-    }
-    
-    func configure(feed: FeedModel) {
-        id = feed.id
-        nameLabel.text = "\(feed.type ?? "") \(feed.quantity?.formattedToString() ?? "")kg"
-        photoImageView.image = (feed.type == FeedType.dry.rawValue) ? .dryFood : .cannedFood
-    }
-    
-    @IBAction func clickedMinus(_ sender: UIButton) {
-        if let id = id {
-            delegate?.decrement(id: id)
-        }
-    }
-    
-    @IBAction func clickedPlus(_ sender: UIButton) {
-        if let id = id {
-            delegate?.increment(id: id)
-        }
+    func configure(medical: MedicalModel) {
+        nameLabel.text = "\(medical.animal?.name ?? ""), \(medical.animal?.type ?? ""), \(medical.procedureType ?? ""), \(medical.visitDate?.toString() ?? Date().toString())"
     }
 }

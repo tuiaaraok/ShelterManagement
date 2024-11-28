@@ -24,5 +24,6 @@ class MenuViewController: UIViewController {
     }
     
     @IBAction func clickedMedicalCare(_ sender: BaseButton) {
+        self.pushViewController(MedicalCareViewController.self)
     }
 }

@@ -22,7 +22,7 @@ class BaseButton: UIButton {
     }
     
     func commonInit() {
-        self.titleLabel?.font = .regular(size: 26)
+        self.titleLabel?.font = .regular(size: 18)
         self.setTitleColor(.background, for: .normal)
         self.backgroundColor = .baseOrange
         self.layer.borderWidth = 2

@@ -105,11 +105,10 @@ class CoreDataManager {
     }
     
     func saveFeed(feedModel: FeedModel, completion: @escaping (Error?) -> Void) {
-        let id = feedModel.id
         let backgroundContext = persistentContainer.newBackgroundContext()
         backgroundContext.perform {
             let fetchRequest: NSFetchRequest<Feed> = Feed.fetchRequest()
-            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            fetchRequest.predicate = NSPredicate(format: "type == %@", feedModel.type ?? "")
             
             do {
                 let results = try backgroundContext.fetch(fetchRequest)
@@ -117,13 +116,13 @@ class CoreDataManager {
                 
                 if let existingFeed = results.first {
                     feed = existingFeed
+                    feed.quantity += feedModel.quantity ?? 0
                 } else {
                     feed = Feed(context: backgroundContext)
-                    feed.id = id
+                    feed.id = feedModel.id
+                    feed.type = feedModel.type
+                    feed.quantity = feedModel.quantity ?? 0
                 }
-                    
-                feed.type = feedModel.type
-                feed.quantity = feedModel.quantity ?? 0
                 
                 try backgroundContext.save()
                 DispatchQueue.main.async {
@@ -136,6 +135,7 @@ class CoreDataManager {
             }
         }
     }
+
     
     func fetchFeeds(completion: @escaping ([FeedModel], Error?) -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
@@ -158,6 +158,39 @@ class CoreDataManager {
             }
         }
     }
+
+    func updateFeedQuantity(id: UUID, delta: Double, completion: @escaping (Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Feed> = Feed.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            
+            do {
+                let results = try backgroundContext.fetch(fetchRequest)
+                if let feed = results.first {
+                    let newQuantity = feed.quantity + delta
+                    if newQuantity < 0 {
+                        return
+                    }
+                    feed.quantity = newQuantity
+                    try backgroundContext.save()
+                    DispatchQueue.main.async {
+                        completion(nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(NSError(domain: "CoreDataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Feed not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(error)
+                }
+            }
+        }
+    }
+
+
 
     func saveMedical(medicalModel: MedicalModel, completion: @escaping (Error?) -> Void) {
         let id = medicalModel.id

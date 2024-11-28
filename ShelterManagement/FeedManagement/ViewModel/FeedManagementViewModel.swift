@@ -18,4 +18,12 @@ class FeedManagementViewModel {
             self.feeds = feeds
         }
     }
+    
+    func increment(id: UUID, completion: @escaping (Error?) -> Void) {
+        CoreDataManager.shared.updateFeedQuantity(id: id, delta: 1, completion: completion)
+    }
+
+    func decrement(id: UUID, completion: @escaping (Error?) -> Void) {
+        CoreDataManager.shared.updateFeedQuantity(id: id, delta: -1, completion: completion)
+    }
 }

@@ -62,6 +62,7 @@ extension FeedManagementViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedTableViewCell", for: indexPath) as! FeedTableViewCell
         cell.configure(feed: viewModel.feeds[indexPath.section])
+        cell.delegate = self
         return cell
     }
     
@@ -76,10 +77,24 @@ extension FeedManagementViewController: UITableViewDelegate, UITableViewDataSour
 
 extension FeedManagementViewController: FeedTableViewCellDelegate {
     func increment(id: UUID) {
-         
+        viewModel.increment(id: id) { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                self.showErrorAlert(message: error.localizedDescription)
+            } else {
+                self.viewModel.fetchData()
+            }
+        }
     }
     
     func decrement(id: UUID) {
-         
+        viewModel.decrement(id: id) { [weak self] error in
+            guard let self = self else { return }
+            if let error = error {
+                self.showErrorAlert(message: error.localizedDescription)
+            } else {
+                self.viewModel.fetchData()
+            }
+        }
     }
 }

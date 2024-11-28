@@ -47,6 +47,10 @@ class FeedManagementViewController: UIViewController {
         }
         self.navigationController?.pushViewController(feedFormVC, animated: true)
     }
+    
+    deinit {
+        viewModel.clear()
+    }
 }
 
 extension FeedManagementViewController: UITableViewDelegate, UITableViewDataSource {

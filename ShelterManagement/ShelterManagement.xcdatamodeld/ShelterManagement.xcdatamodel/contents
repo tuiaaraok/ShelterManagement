@@ -5,7 +5,6 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="type" optional="YES" attributeType="String"/>
-        <relationship name="medical" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medical" inverseName="animal" inverseEntity="Medical"/>
     </entity>
     <entity name="Feed" representedClassName="Feed" syncable="YES" codeGenerationType="class">
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -13,9 +12,9 @@
         <attribute name="type" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Medical" representedClassName="Medical" syncable="YES" codeGenerationType="class">
+        <attribute name="animalID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="procedureType" optional="YES" attributeType="String"/>
         <attribute name="visitDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="animal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Animal" inverseName="medical" inverseEntity="Animal"/>
     </entity>
 </model>

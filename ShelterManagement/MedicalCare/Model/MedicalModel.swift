@@ -9,7 +9,8 @@ import Foundation
 
 struct MedicalModel {
     var id: UUID
-    var animal: AnimalModel?
+    var animalID: UUID?
     var procedureType: String?
     var visitDate: Date?
+    var animal: AnimalModel?
 }

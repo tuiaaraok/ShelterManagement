@@ -51,6 +51,10 @@ class AnimalAccountingViewController: UIViewController {
     @IBAction func clickedAdd(_ sender: BaseButton) {
         openAnimalFormVC()
     }
+    
+    func clear() {
+        viewModel.clear()
+    }
 }
 
 extension AnimalAccountingViewController: UITableViewDelegate, UITableViewDataSource {

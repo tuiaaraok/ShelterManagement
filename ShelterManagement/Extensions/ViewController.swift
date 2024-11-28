@@ -24,7 +24,7 @@ extension UIViewController {
     }
     
     @objc func clickedInfo() {
-        
+        self.pushViewController(SettingsViewController.self)
     }
     
     @objc func clickedBack() {

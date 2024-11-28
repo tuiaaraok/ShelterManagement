@@ -210,25 +210,9 @@ class CoreDataManager {
                     medical.id = id
                 }
                 
-                if let animalModel = medicalModel.animal {
-                    let animalFetchRequest: NSFetchRequest<Animal> = Animal.fetchRequest()
-                    animalFetchRequest.predicate = NSPredicate(format: "id == %@", animalModel.id as CVarArg)
-                    if let fetchedAnimal = try backgroundContext.fetch(animalFetchRequest).first {
-                        medical.animal = fetchedAnimal
-                    } else {
-                        let newAnimal = Animal(context: backgroundContext)
-                        newAnimal.id = animalModel.id
-                        newAnimal.name = animalModel.name
-                        newAnimal.type = animalModel.type
-                        newAnimal.age = Int32(animalModel.age ?? 0)
-                        medical.animal = newAnimal
-                    }
-                } else {
-                    medical.animal = nil
-                }
-                
                 medical.procedureType = medicalModel.procedureType
                 medical.visitDate = medicalModel.visitDate
+                medical.animalID = medicalModel.animalID
                 
                 try backgroundContext.save()
                 DispatchQueue.main.async {
@@ -243,6 +227,28 @@ class CoreDataManager {
     }
 
     
+//    func fetchMedicals(completion: @escaping ([MedicalModel], Error?) -> Void) {
+//        let backgroundContext = persistentContainer.newBackgroundContext()
+//        backgroundContext.perform {
+//            let fetchRequest: NSFetchRequest<Medical> = Medical.fetchRequest()
+//            do {
+//                let results = try backgroundContext.fetch(fetchRequest)
+//                var medicalsModel: [MedicalModel] = []
+//                for result in results {
+//                    let medicalModel = MedicalModel(id: result.id ?? UUID(), animalID: result.animalID, procedureType: result.procedureType, visitDate: result.visitDate)
+//                    medicalsModel.append(medicalModel)
+//                }
+//                DispatchQueue.main.async {
+//                    completion(medicalsModel, nil)
+//                }
+//            } catch {
+//                DispatchQueue.main.async {
+//                    completion([], error)
+//                }
+//            }
+//        }
+//    }
+    
     func fetchMedicals(completion: @escaping ([MedicalModel], Error?) -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
         backgroundContext.perform {
@@ -251,7 +257,31 @@ class CoreDataManager {
                 let results = try backgroundContext.fetch(fetchRequest)
                 var medicalsModel: [MedicalModel] = []
                 for result in results {
-                    let medicalModel = MedicalModel(id: result.id ?? UUID(), animal: AnimalModel(id: result.animal?.id ?? UUID(), name: result.animal?.name, type: result.animal?.type, age: Int(result.animal?.age ?? 0)), procedureType: result.procedureType, visitDate: result.visitDate)
+                    var animalModel: AnimalModel? = nil
+                    
+                    if let animalID = result.animalID {
+                        let animalFetchRequest: NSFetchRequest<Animal> = Animal.fetchRequest()
+                        animalFetchRequest.predicate = NSPredicate(format: "id == %@", animalID as CVarArg)
+                        if let animal = try backgroundContext.fetch(animalFetchRequest).first {
+                            animalModel = AnimalModel(
+                                id: animal.id ?? UUID(),
+                                name: animal.name,
+                                type: animal.type,
+                                age: Int(animal.age)
+                            )
+                        }
+                    }
+                    
+                    // Skip creating MedicalModel if animalModel is nil
+                    guard let validAnimalModel = animalModel else { continue }
+                    
+                    let medicalModel = MedicalModel(
+                        id: result.id ?? UUID(),
+                        animalID: result.animalID,
+                        procedureType: result.procedureType,
+                        visitDate: result.visitDate,
+                        animal: validAnimalModel
+                    )
                     medicalsModel.append(medicalModel)
                 }
                 DispatchQueue.main.async {
@@ -264,6 +294,8 @@ class CoreDataManager {
             }
         }
     }
+
+
     
     func removeMedical(by id: UUID, completion: @escaping (Error?) -> Void) {
         let backgroundContext = persistentContainer.newBackgroundContext()
@@ -291,6 +323,32 @@ class CoreDataManager {
             }
         }
     }
+    
+    func fetchAnimal(by id: UUID, completion: @escaping (AnimalModel?, Error?) -> Void) {
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        backgroundContext.perform {
+            let fetchRequest: NSFetchRequest<Animal> = Animal.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id as CVarArg)
+            do {
+                let result = try backgroundContext.fetch(fetchRequest).first
+                if let animal = result {
+                    let animalModel = AnimalModel(id: animal.id ?? UUID(), name: animal.name, type: animal.type, age: Int(animal.age))
+                    DispatchQueue.main.async {
+                        completion(animalModel, nil)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        completion(nil, NSError(domain: "CoreDataManager", code: 404, userInfo: [NSLocalizedDescriptionKey: "Animal not found"]))
+                    }
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            }
+        }
+    }
+
 
 }
 

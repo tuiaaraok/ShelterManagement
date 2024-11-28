@@ -51,6 +51,10 @@ class MedicalCareViewController: UIViewController {
     @IBAction func clickedAdd(_ sender: BaseButton) {
         openMedicalForm()
     }
+    
+    deinit {
+        viewModel.clear()
+    }
 }
 
 extension MedicalCareViewController: UITableViewDelegate, UITableViewDataSource {

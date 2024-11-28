@@ -103,7 +103,8 @@ class MedicalFormViewController: UIViewController {
         
         animalsDropDown.selectionAction = { [weak self] (index: Int, item: String) in
             guard let self = self else { return }
-            self.viewModel.medical.animal = viewModel.animals[index]
+            self.viewModel.medical.animalID = viewModel.animals[index].id
+            self.animalButton.setTitle(item, for: .normal)
             self.animalDropDownImageView.isHighlighted = false
         }
         
@@ -118,9 +119,8 @@ class MedicalFormViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { [weak self] medical in
                 guard let self = self else { return }
-                self.saveButton.isEnabled = (medical.animal != nil && medical.procedureType.checkValidation() && medical.visitDate != nil)
+                self.saveButton.isEnabled = (medical.animalID != nil && medical.procedureType.checkValidation() && medical.visitDate != nil)
                 self.typeButton.setTitle(medical.procedureType, for: .normal)
-                self.animalButton.setTitle(medical.animal?.name, for: .normal)
                 self.visiteDateTextField.text = medical.visitDate?.toString()
             }
             .store(in: &cancellables)
@@ -130,6 +130,14 @@ class MedicalFormViewController: UIViewController {
             .sink { [weak self] animals in
                 guard let self = self else { return }
                 self.animalsDropDown.dataSource = animals.map({ $0.name ?? ""})
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$animal
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] animal in
+                guard let self = self else { return }
+                self.animalButton.setTitle(animal?.name, for: .normal)
             }
             .store(in: &cancellables)
     }

@@ -22,4 +22,8 @@ class AnimalsViewModel {
     func remove(id: UUID, completion: @escaping (Error?) -> Void) {
         CoreDataManager.shared.removeAnimal(by: id, completion: completion)
     }
+    
+    func clear() {
+        animals = []
+    }
 }

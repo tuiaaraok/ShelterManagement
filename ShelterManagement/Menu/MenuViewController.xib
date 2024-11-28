@@ -31,6 +31,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="UMV-2o-XH1"/>
                             </constraints>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Animal accounting"/>
                             <connections>
@@ -42,6 +43,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="0hJ-M4-kNc"/>
                             </constraints>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Feed management"/>
                             <connections>
@@ -53,6 +55,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="GY1-hd-q9G"/>
                             </constraints>
+                            <inset key="titleEdgeInsets" minX="0.0" minY="8" maxX="0.0" maxY="0.0"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" title="Medical care"/>
                             <connections>

@@ -22,4 +22,8 @@ class MedicalCareViewModel {
     func remove(id: UUID, completion: @escaping (Error?) -> Void) {
         CoreDataManager.shared.removeMedical(by: id, completion: completion)
     }
+    
+    func clear() {
+        medicals = []
+    }
 }
